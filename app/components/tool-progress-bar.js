@@ -8,7 +8,6 @@ export function ToolProgressBar({ toolName }) {
     const tools = {
         react: 7,
         nextjs: 7,
-        ejs: 5,
         tailwindcss: 8,
         bootstrap: 6,
         daisyui: 8,
@@ -47,10 +46,8 @@ export function ToolProgressBar({ toolName }) {
     }
 
     return (
-        <div className="bg-gray-400 rounded-3xl">
-            <div className="bg-purple-500 text-white font-bold rounded-3xl py-1 flex items-center" style={{ width: `${tools[toolName] * 10}%` }}>
-                {/* <span className="ml-2">{toolName}</span> */}
-            </div>
+        <div className="bg-gray-400 w-52 rounded-3xl">
+            <div className="bg-purple-500 text-white font-bold rounded-3xl py-1 flex items-center" style={{ width: `${tools[toolName] * 10}%` }}></div>
         </div>
     );
 }

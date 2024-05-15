@@ -1,4 +1,4 @@
-// tool-badge.js - This component is used to display a single tool in a badge format
+// tool-badge.js - This component is used to display a single tool in a badge format (Name + Icon)
 
 import React from 'react';
 import Image from 'next/image';
@@ -85,6 +85,8 @@ export function ToolBadge({ toolName }) {
                 return 'Heroku';
             case 'vercel':
                 return 'Vercel';
+            case 'swaggerui':
+                return 'Swagger UI';
             default:
                 return toolName;
         }
