@@ -15,7 +15,7 @@ export function ToolProgressBar({ toolName }) {
         nodejs: 8,
         springboot: 5,
         express: 8,
-        posgresql: 8,
+        postgresql: 8,
         mongodb: 5,
         mysql: 6,
         sqlserver: 6,

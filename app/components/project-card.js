@@ -3,6 +3,7 @@
 // It will also display a screenshot of the project.
 
 import React from 'react';
+import Image from 'next/image';
 
 export function ProjectCard({ project }) {
 
@@ -11,7 +12,7 @@ export function ProjectCard({ project }) {
         {
             name: 'The Electronics Store',
             description: 'The front end for a full stack e-commerce website.',
-            screenshot: '/project1.png',
+            screenshot: '/screen_electronics_store_full.png',
             tools: ['nextjs', 'tailwindcss', 'daisyui', 'materialui', 'heroku']
         },
         {
@@ -56,11 +57,10 @@ export function ProjectCard({ project }) {
 
     return (
         <div className="bg-slate-100 rounded-lg shadow-lg">
-            <div>
-                <img src={proj.screenshot} alt={proj.name} className="rounded-lg" />
+            <div className="bg-cover bg-center h-64 rounded-t-lg" style={{ backgroundImage: `url(${proj.screenshot})` }}>
+                <h2 className="text-2xl font-bold text-purple-400 pt-10 pl-4">{proj.name}</h2>
+                <p className="mt-5 text-lg text-purple-500 px-5">{proj.description}</p>
             </div>
-            <h2 className="text-2xl font-bold text-purple-400">{proj.name}</h2>
-            <p className="mt-5 text-lg text-purple-500">{proj.description}</p>
             <ul className="mt-5">
                 {proj.tools.map((tool) => (
                     <li key={tool} className="text-lg text-purple-500">{tool}</li>

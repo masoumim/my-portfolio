@@ -24,6 +24,7 @@ export default function Home() {
       {/* Projects */}
       <div className="flex flex-wrap justify-center gap-5 py-10 max-w-7xl mx-auto">
         <ProjectCard project={"The Electronics Store"} />
+        <ProjectCard project={"The Electronics Store API"} />
       </div>
       {/* About / Contact */}
       <div>
