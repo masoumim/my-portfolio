@@ -3,7 +3,12 @@
 // It will also display a screenshot of the project.
 
 import React from 'react';
-import Image from 'next/image';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { ProjectToolBadge } from './project-tool-badge';
 
 export function ProjectCard({ project }) {
 
@@ -12,38 +17,50 @@ export function ProjectCard({ project }) {
         {
             name: 'The Electronics Store',
             description: 'The front end for a full stack e-commerce website.',
-            screenshot: '/screen_electronics_store_full.png',
-            tools: ['nextjs', 'tailwindcss', 'daisyui', 'materialui', 'heroku']
+            screenshot: '/screen_electronics_store_dark.png',
+            tools: ['nextjs', 'tailwindcss', 'daisyui', 'materialui', 'heroku'],
+            url: 'https://electronics-store-8382b35f5fca.herokuapp.com/',
+            github: 'https://github.com/masoumim/the-electronics-store',
         },
         {
             name: 'The Electronics Store API',
             description: 'The API that powers the full stack e-commerce website.',
-            screenshot: '/project2.png',
-            tools: ['nodejs', 'express', 'prisma', 'postgresql', 'swaggerui', 'heroku']
+            screenshot: '/screen_electronics_store_API_dark.png',
+            tools: ['nodejs', 'express', 'prisma', 'postgresql', 'swaggerui', 'heroku'],
+            url: 'https://the-electronics-store-api-962f1726488d.herokuapp.com/api-docs/',
+            github: 'https://github.com/masoumim/the-electronics-store-api',
         },
         {
             name: 'Reddit Game Posts',
             description: 'A Reddit client that allows users to browse and post on game related content, using the Reddit API.',
-            screenshot: '/project3.png',
-            tools: ['nextjs', 'tailwindcss', 'jest', 'reacttestinglibrary', 'vercel']
+            screenshot: '/screen_reddit_game_posts_dark.png',
+            tools: ['nextjs', 'tailwindcss', 'jest', 'reacttestinglibrary', 'vercel'],
+            url: 'https://reddit-game-posts.vercel.app/',
+            github: 'https://github.com/masoumim/reddit-game-posts',
         },
         {
             name: 'Jamming App',
             description: 'A Spotify client that allows users to search for songs and create playlists, using the Spotify API.',
-            screenshot: '/project4.png',
-            tools: ['nodejs', 'nextjs', 'css', 'vercel']
+            screenshot: '/screen_jamming_dark.png',
+            tools: ['nodejs', 'nextjs', 'css', 'vercel'],
+            url: 'https://jamming-sigma.vercel.app/',
+            github: 'https://github.com/masoumim/jamming',
         },
         {
             name: 'Console Wars',
             description: 'A web app that lets users rank, compare and explore game consoles from the past and present',
-            screenshot: '/project5.png',
-            tools: ['nodejs', 'express', 'postgresql', 'sequelize', 'heroku']
+            screenshot: '/screen_console_wars_dark.png',
+            tools: ['nodejs', 'express', 'postgresql', 'sequelize', 'ejs', 'css', 'heroku'],
+            url: 'https://console-wars-c040e29445ae.herokuapp.com/',
+            github: 'https://github.com/masoumim/console-wars',
         },
         {
             name: 'Flash Cards',
             description: 'A web app that lets users create flash cards and quizzes to help them study',
-            screenshot: '/project6.png',
-            tools: ['nodejs', 'nextjs', 'redux', 'tailwind', 'vercel']
+            screenshot: '/screen_flashcards_dark.png',
+            tools: ['nodejs', 'nextjs', 'redux', 'tailwindcss', 'vercel'],
+            url: 'https://flashcards-hazel-mu.vercel.app/',
+            github: 'https://github.com/masoumim/flashcards',
         }
     ]
 
@@ -56,16 +73,26 @@ export function ProjectCard({ project }) {
     const proj = getProjectByName(project);
 
     return (
-        <div className="bg-slate-100 rounded-lg shadow-lg">
+        <div className="bg-slate-100 rounded-lg shadow-lg" style={{ width: '37rem' }}>
             <div className="bg-cover bg-center h-64 rounded-t-lg" style={{ backgroundImage: `url(${proj.screenshot})` }}>
-                <h2 className="text-2xl font-bold text-purple-400 pt-10 pl-4">{proj.name}</h2>
-                <p className="mt-5 text-lg text-purple-500 px-5">{proj.description}</p>
+                <h2 className="text-2xl font-bold text-purple-300 pt-10 pl-4">{proj.name}</h2>
+                <p className="mt-5 text-lg text-white font-bold px-4">{proj.description}</p>
+                <div className="flex flex-row gap-5 mt-3">
+                    <FontAwesomeIcon icon={faLink} color='white' className='ml-4 mt-4 h-5 w-5' />
+                    <Link href={proj.url} className="text-purple-300 font-bold hover:text-purple-500" style={{ marginTop: '13px' }}>View Project</Link>
+                </div>
+                <div className="flex flex-row gap-5">
+                    <FontAwesomeIcon icon={faGithub} color='white' className='ml-4 mt-4 h-5 w-5' />
+                    <Link href={proj.github} className="text-purple-300 font-bold hover:text-purple-500" style={{ marginTop: '13px' }}>View Code</Link>
+                </div>
             </div>
-            <ul className="mt-5">
+
+            {/* Display the tool badges */}
+            <div className="flex flex-row flex-wrap justify-center gap-6 mt-10 px-10">
                 {proj.tools.map((tool) => (
-                    <li key={tool} className="text-lg text-purple-500">{tool}</li>
+                    <ProjectToolBadge key={tool} toolName={tool} />
                 ))}
-            </ul>
+            </div>
         </div>
     );
 }

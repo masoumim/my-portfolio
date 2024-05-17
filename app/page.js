@@ -25,6 +25,11 @@ export default function Home() {
       <div className="flex flex-wrap justify-center gap-5 py-10 max-w-7xl mx-auto">
         <ProjectCard project={"The Electronics Store"} />
         <ProjectCard project={"The Electronics Store API"} />
+        <ProjectCard project={"Reddit Game Posts"} />
+        <ProjectCard project={"Jamming App"} />
+        <ProjectCard project={"Console Wars"} />
+        <ProjectCard project={"Flash Cards"} />
+        {/* Add more cards here, they will automatically wrap to the next row after 4 cards */}
       </div>
       {/* About / Contact */}
       <div>
