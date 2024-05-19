@@ -16,10 +16,10 @@ export default function Home() {
         {/* Contact icons */}
         <div className="flex flex-row justify-center gap-4 mt-10 md:gap-7">
           <div className="flex flex-col items-center justify-center">
-            <a href="/resume.pdf" download="Mark_Masoumi_Resume.pdf">
+            <a href="/markmasoumi_resume_webdev.pdf" download="markmasoumi_resume_webdev.pdf">
               <FontAwesomeIcon icon={faFileArrowDown} color='black' className='h-12 w-12 text-slate-500 hover:text-purple-400' />
             </a>
-            <a href="/resume.pdf" download="Mark_Masoumi_Resume.pdf">
+            <a href="/markmasoumi_resume_webdev.pdf" download="markmasoumi_resume_webdev.pdf">
               <p className="font-bold text-sm text-purple-700">CV</p>
             </a>
           </div>
