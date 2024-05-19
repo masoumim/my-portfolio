@@ -47,7 +47,7 @@ export function ProjectToolBadge({ toolName }) {
             case 'mocha':
                 return 'Mocha';
             case 'reacttestinglibrary':
-                return 'React Testing Library';
+                return 'Testing Library';
             case 'firebase':
                 return 'Firebase';
             case 'azure':
@@ -96,8 +96,8 @@ export function ProjectToolBadge({ toolName }) {
     return (
         <div className='mb-5'>
             <div className="flex items-center mb-2">
-                <Image src={`/${toolName}.svg`} width={30} height={30} />
-                <span className="ml-2">{getFullName(toolName)}</span>
+                <Image src={`/${toolName}.svg`} width={30} height={30}/>
+                <span className="ml-2 text-md">{getFullName(toolName)}</span>
             </div>
         </div>
     );

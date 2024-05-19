@@ -73,10 +73,10 @@ export function ProjectCard({ project }) {
     const proj = getProjectByName(project);
 
     return (
-        <div className="bg-slate-100 rounded-lg shadow-lg" style={{ width: '31rem' }}>
+        <div className="bg-slate-100 rounded-lg shadow-lg" style={{ width: '20rem' }}>
             <div className="bg-cover bg-center h-64 rounded-t-lg" style={{ backgroundImage: `url(${proj.screenshot})` }}>
-                <h2 className="text-2xl font-bold text-purple-300 pt-10 pl-4">{proj.name}</h2>
-                <p className="mt-5 text-lg text-white font-bold px-4">{proj.description}</p>
+                <h2 className="text-1xl font-bold text-purple-300 pt-7 pl-4">{proj.name}</h2>
+                <p className="mt-5 text-md text-white font-bold px-4">{proj.description}</p>
                 <div className="flex flex-row gap-5 mt-3">
                     <FontAwesomeIcon icon={faLink} color='white' className='ml-4 mt-4 h-5 w-5' />
                     <Link href={proj.url} className="text-purple-300 font-bold hover:text-purple-500" style={{ marginTop: '13px' }}>View Project</Link>
@@ -88,7 +88,7 @@ export function ProjectCard({ project }) {
             </div>
 
             {/* Display the tool badges */}
-            <div className="flex flex-row flex-wrap justify-center gap-6 mt-10 px-10">
+            <div className="flex flex-row flex-wrap justify-center gap-3 mt-10 px-10">
                 {proj.tools.map((tool) => (
                     <ProjectToolBadge key={tool} toolName={tool} />
                 ))}

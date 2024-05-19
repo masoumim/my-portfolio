@@ -43,6 +43,11 @@ export default function Home() {
           </div>
         </div>
       </div>
+      {/* About / Contact */}
+      <div className="mb-20">
+        <h1 className=" text-2xl font-bold text-purple-500 text-center my-6">About</h1>
+        <AboutCard />
+      </div>
       {/* Tools */}
       <h1 className=" text-2xl font-bold text-purple-500 text-center mt-10">Tools & Tech</h1>
       <div className="flex flex-wrap justify-center gap-5 py-10 max-w-6xl mx-auto">
@@ -58,7 +63,7 @@ export default function Home() {
       {/* Add more cards here, they will automatically wrap to the next row after 4 cards */}
       {/* Projects */}
       <h1 className=" text-2xl font-bold text-purple-500 text-center mt-9">Projects</h1>
-      <div className="flex flex-wrap justify-center gap-5 py-10 max-w-7xl mx-auto">
+      <div className="flex flex-wrap justify-center gap-5 py-10 max-w-7xl mb-20 mx-auto">
         <ProjectCard project={"The Electronics Store"} />
         <ProjectCard project={"The Electronics Store API"} />
         <ProjectCard project={"Reddit Game Posts"} />
@@ -66,11 +71,6 @@ export default function Home() {
         <ProjectCard project={"Console Wars"} />
         <ProjectCard project={"Flash Cards"} />
         {/* Add more cards here, they will automatically wrap to the next row after 4 cards */}
-      </div>
-      {/* About / Contact */}
-      <div className="mb-20">
-        <h1 className=" text-2xl font-bold text-purple-500 text-center my-6">About</h1>
-        <AboutCard />
       </div>
     </>
   );
