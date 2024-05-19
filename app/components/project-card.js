@@ -73,7 +73,7 @@ export function ProjectCard({ project }) {
     const proj = getProjectByName(project);
 
     return (
-        <div className="bg-slate-100 rounded-lg shadow-lg" style={{ width: '37rem' }}>
+        <div className="bg-slate-100 rounded-lg shadow-lg" style={{ width: '31rem' }}>
             <div className="bg-cover bg-center h-64 rounded-t-lg" style={{ backgroundImage: `url(${proj.screenshot})` }}>
                 <h2 className="text-2xl font-bold text-purple-300 pt-10 pl-4">{proj.name}</h2>
                 <p className="mt-5 text-lg text-white font-bold px-4">{proj.description}</p>

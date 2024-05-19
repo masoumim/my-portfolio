@@ -48,7 +48,7 @@ export function ToolBadge({ toolName }) {
             case 'mocha':
                 return 'Mocha';
             case 'reacttestinglibrary':
-                return 'React Testing Library';
+                return 'Testing Library';
             case 'firebase':
                 return 'Firebase';
             case 'azure':
